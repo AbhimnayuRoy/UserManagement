@@ -58,10 +58,10 @@ public class UserDao {
 			ResultSet rs = preSt.executeQuery();
 			
 			while(rs.next()) {
-				String fullName = rs.getString("full_name");
-				String emailAdd = rs.getString("email_add");
+				String name = rs.getString("name");
+				String email = rs.getString("email");
 				String country = rs.getString("country");
-				user = new User(id,fullName,emailAdd,country);
+				user = new User(id,name,email,country);
 			}
 		}
 		catch(SQLException e) {
@@ -80,8 +80,8 @@ public class UserDao {
 			
 			while(rs.next()) {
 				int id = rs.getInt("id");
-				String fullName = rs.getString("full_name");
-				String emailAdd = rs.getString("email_add");
+				String fullName = rs.getString("name");
+				String emailAdd = rs.getString("email");
 				String country = rs.getString("country");
 				users.add(new User(id,fullName,emailAdd,country));
 			}
